@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600&display=swap');
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  outline: 0;
+  text-decoration: none;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+.nav {
+  width: 100%;
+  height: 80px;
+  position: fixed;
+  line-height: 65px;
+  text-align: center;
+  background-color: #fcfcfc;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+.logo {
+  width: 220px;
+  height: 10px;
+  position: absolute;
+  left: 50px;
+}
+
+.logo img {
+  width: 100%;
+  vertical-align: middle;
+}
+.main_list {
+  width: 600px;
+  height: 80px;
+  float: right;
+}
+.main_list ul {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  list-style: none;
+}
+.main_list ul li {
+  width: 120px;
+  height: 80px;
+}
+
+.main_list ul li a {
+  color: #212121;
+  font-weight: 500;
+  line-height: 80px;
+}
+
+.main_list ul li a:hover {
+  background-color: #212121;
+  color: #fcfcfc;
+  padding: 0.3rem 0.8rem;
+  transition: all 0.3s ease-in;
+}
+
+.media_button {
+  width: 40px;
+  height: 40px;
+  background-color: transparent;
+  position: absolute;
+  right: 50px;
+  top: 10px;
+  display: none;
+}
+
+.nav .media_button button.main_media_button {
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.nav .media_button button.main_media_button span {
+  width: 75%;
+  height: 2px;
+  display: block;
+  background-color: #212121;
+  margin-top: 9px;
+}
+
+.media_button button.main_media_button:hover span:nth-of-type(1) {
+  transform: rotateY(180deg);
+  transition: all 0.7s;
+  background-color: #212121;
+}
+.media_button button.main_media_button:hover span:nth-of-type(2) {
+  transform: rotateY(180deg);
+  transition: all 0.6s;
+  background-color: #212121;
+}
+.media_button button.main_media_button:hover span:nth-of-type(3) {
+  transform: rotateY(180deg);
+  transition: all 0.5s;
+  background-color: #212121;
+}
+
+.media_button button.active span:nth-of-type(1) {
+  transform: rotate3d(0, 0, 1, 45deg);
+  position: absolute;
+  margin: 0;
+}
+.media_button button.active span:nth-of-type(2) {
+  display: none;
+}
+
+.media_button button.active span:nth-of-type(3) {
+  transform: rotate3d(0, 0, 1, -45deg);
+  position: absolute;
+  margin: 0;
+}
+
+.media_button button.active:hover span:nth-of-type(1) {
+  transform: rotate3d(0, 0, 1, 45deg);
+}
+.media_button button.active:hover span:nth-of-type(3) {
+  transform: rotate3d(0, 0, 1, -45deg);
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    margin: 0;
+  }
+  .logo {
+    margin-left: 15px;
+  }
+  .main_list {
+    width: 100%;
+    margin-top: 80px;
+    height: 0px;
+    overflow: hidden;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px;
+  }
+  .show_list {
+    height: 200px;
+  }
+  .main_list ul {
+    flex-direction: column;
+    width: 100%;
+    height: 200px;
+    top: 80px;
+    right: 0;
+    left: 0;
+  }
+  .main_list ul li {
+    width: 100%;
+    height: 50px;
+    background-color: rgba(255, 255, 255, 0.8);
+  }
+
+  .main_list ul li a {
+    display: table;
+    line-height: 40px;
+    width: 100%;
+    height: 40px;
+  }
+  .main_list ul li a:hover {
+    background-color: transparent;
+    color: #212121;
+  }
+  .media_button {
+    display: block;
+    top: 4px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .logo {
+    left: 0px;
+  }
+  .media_button {
+    right: 3px;
+  }
+}
